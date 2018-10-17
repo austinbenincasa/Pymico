@@ -1,9 +1,12 @@
 # Pymico
-
+Python Multisystem Interface Controller
 
 ## What is Pymico?
 
-## Minions
+## What are Minions?
+
+
+## What is a Master?
 
 
 ## Purpose of Plugins
