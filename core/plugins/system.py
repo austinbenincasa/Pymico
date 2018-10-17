@@ -26,7 +26,7 @@ class SystemPlugin(BasePlugin):
 
     def system_information(self):
         '''
-        Displays information about the minion system
+        Displays information about the Minion system
         '''
         ret = {}
         ret['hostname'] = socket.gethostname()
@@ -41,7 +41,7 @@ class SystemPlugin(BasePlugin):
 
     def interfaces(self):
         '''
-        Displays statistics about the System 
+        Displays the network interfaces on the Minion system 
         '''
         return minionRPC_pb2.functionResp(
             data="Not yet implemented",
