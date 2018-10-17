@@ -37,6 +37,7 @@ class WebServerPlugin(BasePlugin):
     def list_functions():
         return [
             WebServerPlugin.start,
+            WebServerPlugin.stop 
         ]
 
     @staticmethod
