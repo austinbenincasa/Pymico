@@ -1,0 +1,13 @@
+SiteConfig:
+  config: minion
+  name: test
+  core:
+    version: 0.1
+    address: "localhost"
+    port: 50051
+  log:
+    name: minion
+    path: minion.log # if path is '' logging will go to stdout
+    level: debug
+  plugins:
+    - SystemPlugin

@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option objc_class_prefix = "HLW";
+
+package MinionRPC;
+
+service MinionRPC {
+  rpc restart (Empty) returns (restartResp) {}
+  rpc shutdown (Empty) returns (shutdownResp) {}
+  rpc checkAlive (Empty) returns (aliveResp) {}
+  rpc getPlugins (Empty) returns (pluginsResp) {}
+  rpc getPrompt (Empty) returns (promptResp) {}
+  rpc loadPlugin (loadReq) returns (loadResp) {}
+  rpc runPluginFunction (functionReq) returns (functionResp) {}
+  rpc runShellCommand (commandReq) returns (stream commandResp) {}
+}
+
+message Empty {
+}
+
+message functionReq {
+  string plugin = 1;
+  string function = 2;
+}
+
+message functionResp {
+  string type = 1;
+  string data = 2;
+  int32 error = 3;
+}
+
+message promptResp {
+  string prompt = 1;
+}
+
+message loadReq {
+  string plugin = 1;
+}
+
+message loadResp {
+  string reply = 1;
+  int32 error = 2;
+}
+
+message pluginsResp {
+  string reply = 1;
+}
+
+message restartResp {
+  string reply = 1;
+}
+
+message shutdownResp {
+  string reply = 1;
+}
+
+message aliveResp {
+  string reply = 1;
+}
+
+message commandReq {
+  string cwd = 1;
+  string stdin = 2;
+}
+
+message commandResp {
+  string stdout = 1;
+  int32 code = 3;
+  string cwd = 4;
+}

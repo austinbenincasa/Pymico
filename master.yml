@@ -1,0 +1,12 @@
+SiteConfig:
+  config: master
+  minions:
+    - name: "test"
+      address: "localhost"
+      port: 50051
+  log:
+    name: master
+    path: "master.log" # if path is '' logging will go to stdout
+    level: debug
+  controllers:
+    - NginxController
