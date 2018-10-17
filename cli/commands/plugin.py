@@ -104,8 +104,10 @@ class PluginCommand(Command):
             return self.complete_plugins(shell, args, prefix)
         elif len(args) == 2:
             return self.complete_subcmds(shell, args, prefix)
-        elif len(args) == 3 and args[3] != "list":
+        elif len(args) == 3 and args[1] == "exec":
             return self.complete_functions(shell, args[0], prefix)
+        else:
+            return []
 
     def complete_plugins(self, shell, args, prefix):
         minion = shell.connect
