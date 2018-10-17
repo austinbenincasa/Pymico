@@ -12,9 +12,10 @@ Python Multisystem Interface Controller
 ## Purpose of Plugins
 
 The purpose of a plugin is to dynamically give functionallity to a 
-minion to interact with the system that it is installed on. 
+minion and thus a master to interact with programs and services that
+are installed on a minion
 
 ## Purpose of Controllers
 
 The purpose of a plugin is to dynamically give functionallity to a 
-Master to interact with a programs that is installed next to the master.
+Master to interact with programs or services that are installed on the master.
