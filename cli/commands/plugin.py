@@ -51,12 +51,10 @@ class PluginCommand(Command):
             ns = self.parser.parse_args(args)
         except CommandShortCircuit as e:
             return e.code
-        if ns.list and ns.exec:
-            self.error('shell', "Cannot specify -r/--run and -l/--list at the sametime")
-        if ns.plugin and ns.list:
+        if ns.subcmd == 'list':
             self.list_plugin_functions(shell, ns.plugin)
-        elif ns.plugin and ns.exec:
-            self.run_plugin_function(shell, ns.plugin, ns.exec)
+        elif ns.subcmd == 'exec':
+            self.run_plugin_function(shell, ns.plugin, ns.func)
 
 
     def check_connected(self, shell):
@@ -106,7 +104,7 @@ class PluginCommand(Command):
             return self.complete_plugins(shell, args, prefix)
         elif len(args) == 2:
             return self.complete_subcmds(shell, args, prefix)
-        elif len(args) == 3:
+        elif len(args) == 3 and args[3] != "list":
             return self.complete_functions(shell, args[0], prefix)
 
     def complete_plugins(self, shell, args, prefix):
