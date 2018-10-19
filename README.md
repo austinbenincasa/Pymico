@@ -56,3 +56,19 @@ class WebServerPlugin(BasePlugin):
 
 The purpose of a plugin is to dynamically give functionallity to a 
 Master to interact with programs or services that are installed on the master.
+
+## Testing
+
+To test out Pymico do the following:
+
+In one terminal run:
+
+```bash
+austin@computer:~/Pymico$ python run_minion.py
+```
+
+In another terminal run:
+
+```bash
+austin@computer:~/Pymico$ python run_master.py --cli
+```
